@@ -1,3 +1,12 @@
 <h1>
   {{title}}
 </h1>
+
+<p><strong>{{idleState}}</strong></p>
+<p *ngIf="lastPing"><small>Last keepalive ping <strong>{{lastPing | amTimeAgo}}</strong></small></p>
+<button (click)="reset()" *ngIf="timedOut">Restart</button>
+
+<br>
+<p>Universal Timer: {{currentTime}}</p>
+<p>Debug: {{debug_information}}</p>
+<p>Current backend login status: {{mockIsBackendLogin}}</p>
